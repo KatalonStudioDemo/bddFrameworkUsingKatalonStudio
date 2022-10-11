@@ -1,0 +1,81 @@
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testcase.TestCaseFactory as TestCaseFactory
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testdata.TestDataFactory as TestDataFactory
+import com.kms.katalon.core.testobject.ObjectRepository as ObjectRepository
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WSBuiltInKeywords
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
+import internal.GlobalVariable as GlobalVariable
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+
+/**
+ * This is an example of how to use Visual Testing. See tutorial at 
+ * https://forum.katalon.com/t/update-with-katalon-studio-7-7-early-release-of-katalon-testops-visual-testing-image-comparison/45557.
+ */
+
+WebUI.comment('Story: Book an appointment')
+
+WebUI.comment('Given that the user has logged into their account')
+
+WebUI.openBrowser(GlobalVariable.G_SiteURL)
+
+WebUI.takeScreenshotAsCheckpoint("login page")
+
+WebUI.callTestCase(findTestCase('Common Test Cases/Login'), [('Username') : 'John Doe', ('Password') : 'ThisIsNotAPassword'], 
+    FailureHandling.STOP_ON_FAILURE)
+
+WebUI.comment('And Appointment page is displayed')
+
+if (true) {
+	WebUI.takeScreenshotAsCheckpoint("appointment page")
+	
+    WebUI.selectOptionByLabel(findTestObject('null'), 'Hongkong CURA Healthcare Center', false)
+
+    WebUI.check(findTestObject('null'))
+
+    WebUI.check(findTestObject('null'))
+
+    WebUI.setText(findTestObject('null'), '27/12/2016')
+
+    WebUI.setText(findTestObject('null'), 'Please make appointment as soon as possible.')
+}
+
+WebUI.comment('When he fills in valid information in Appointment page')
+
+WebUI.click(findTestObject('null'))
+
+WebUI.verifyTextPresent('Appointment Confirmation', false)
+
+WebUI.comment('Then he should be able to book a new appointment')
+
+if (true) {
+	WebUI.takeFullPageScreenshotAsCheckpoint("booked appointment", [findTestObject('null')])
+	
+    WebUI.verifyMatch('Hongkong CURA Healthcare Center', WebUI.getText(findTestObject('null')), 
+        false)
+
+    WebUI.verifyMatch('Yes', WebUI.getText(findTestObject('null')), false)
+
+    WebUI.verifyMatch('Medicaid', WebUI.getText(findTestObject('null')), false)
+
+    WebUI.verifyMatch('27/12/2016', WebUI.getText(findTestObject('null')), false)
+
+    WebUI.verifyMatch('Please make appointment as soon as possible.', WebUI.getText(findTestObject('null')), 
+        false)
+}
+
+WebUI.takeScreenshot()
+WebUI.closeBrowser()
+
+

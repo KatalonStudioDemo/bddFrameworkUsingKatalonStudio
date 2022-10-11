@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "62FEB5A2AEC6765C7CA2CDA3117208AB",
+  "keywordClasses": [
+    {
+      "name": "com.katalon.checkOutWithExistingUserSteps",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}
