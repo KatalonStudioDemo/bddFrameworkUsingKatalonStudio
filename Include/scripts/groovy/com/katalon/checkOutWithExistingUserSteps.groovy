@@ -44,7 +44,7 @@ import cucumber.api.java.en.When
 
 class checkOutWithExistingUserSteps {
 
-    @Given("Navigate to sauceLab home page")
+	@Given("Navigate to sauceLab home page")
 	def navigateToHomePage(){
 		WebUI.openBrowser('')
 		WebUI.navigateToUrl('https://www.saucedemo.com/')
@@ -53,10 +53,10 @@ class checkOutWithExistingUserSteps {
 	@When("Enter the email and password field")
 	def enterDetails(){
 		WebUI.setText(findTestObject('Object Repository/sauceDemoPageObjects/Page_Swag Labs/input_standard_userlocked_out_userproblem_u_db77ac'),
-		'standard_user')
+				'standard_user')
 
 		WebUI.setEncryptedText(findTestObject('Object Repository/sauceDemoPageObjects/Page_Swag Labs/input_standard_userlocked_out_userproblem_u_3423e9'),
-		'qcu24s4901FyWDTwXGr6XA==')
+				'qcu24s4901FyWDTwXGr6XA==')
 	}
 
 	@And("click on Login button")
@@ -93,19 +93,19 @@ class checkOutWithExistingUserSteps {
 	@And("Enter the first name field")
 	def firstNameField(){
 		WebUI.setText(findTestObject('Object Repository/sauceDemoPageObjects/Page_Swag Labs/input_Checkout Your Information_firstName'),
-		'Test')
+				'Test')
 	}
 
 	@And("Enter the last name field")
 	def lastNameField() {
 		WebUI.setText(findTestObject('Object Repository/sauceDemoPageObjects/Page_Swag Labs/input_Checkout Your Information_lastName'),
-		'User')
+				'User')
 	}
 
 	@And("Enter the zipCode field")
 	def zipCodeField(){
 		WebUI.setText(findTestObject('Object Repository/sauceDemoPageObjects/Page_Swag Labs/input_Checkout Your Information_postalCode'),
-		'121111')
+				'121111')
 	}
 
 	@And("Click on Continue button")
