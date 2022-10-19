@@ -29,6 +29,8 @@ WebUI.setText(findTestObject('Object Repository/sauceDemoPageObjects/Page_Swag L
 WebUI.setEncryptedText(findTestObject('Object Repository/sauceDemoPageObjects/Page_Swag Labs/input_standard_userlocked_out_userproblem_u_3423e9'), 
     'qcu24s4901FyWDTwXGr6XA==')
 
+WebUI.getUrl()
+
 WebUI.click(findTestObject('Object Repository/sauceDemoPageObjects/Page_Swag Labs/input_standard_userlocked_out_userproblem_u_0dff71'))
 
 WebUI.click(findTestObject('Object Repository/sauceDemoPageObjects/Page_Swag Labs/button_Add to cart'))
@@ -41,7 +43,11 @@ WebUI.click(findTestObject('Object Repository/sauceDemoPageObjects/Page_Swag Lab
 
 WebUI.click(findTestObject('Object Repository/sauceDemoPageObjects/Page_Swag Labs/span_2'))
 
+WebUI.getUrl()
+
 WebUI.click(findTestObject('Object Repository/sauceDemoPageObjects/Page_Swag Labs/button_Checkout'))
+
+WebUI.getUrl()
 
 WebUI.setText(findTestObject('Object Repository/sauceDemoPageObjects/Page_Swag Labs/input_Checkout Your Information_firstName'), 
     'Test')

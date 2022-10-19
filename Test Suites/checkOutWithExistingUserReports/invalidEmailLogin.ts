@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>cartTestSuite</name>
+   <name>invalidEmailLogin</name>
    <tag></tag>
    <isRerun>false</isRerun>
    <mailRecipient></mailRecipient>
@@ -10,12 +10,12 @@
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <rerunImmediately>true</rerunImmediately>
-   <testSuiteGuid>ef8972db-d2d2-4e20-8860-930a2873102d</testSuiteGuid>
+   <testSuiteGuid>f8d3ed10-1f77-4f48-ad80-6f08f79ac984</testSuiteGuid>
    <testCaseLink>
-      <guid>2a023cfb-51e1-4567-aefb-41abe23f8c36</guid>
+      <guid>0b2e54da-faba-4ab1-aa85-40ba9e9e5011</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/sauceDemoTestCases/CartScenerio</testCaseId>
+      <testCaseId>Test Cases/sauceDemoTestCases/invalidEmail</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
 </TestSuiteEntity>

@@ -17,21 +17,17 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser('')
+Mobile.startApplication('D:\\katalon studio\\Android Apk file\\DEMO APP_v1.5_apkpure.com (1).apk', true)
 
-WebUI.click(findTestObject('Object Repository/cartPageScenerio/Page_Swag Labs/input_standard_userlocked_out_userproblem_u_0dff71'))
+Mobile.tap(findTestObject('Object Repository/mobileobjectdemo2/android.widget.RadioButton - Female'), 0)
 
-WebUI.click(findTestObject('Object Repository/cartPageScenerio/Page_Swag Labs/button_Add to cart'))
+Mobile.setText(findTestObject('Object Repository/mobileobjectdemo2/android.widget.EditText (2)'), '8800448519', 0)
 
-WebUI.click(findTestObject('Object Repository/cartPageScenerio/Page_Swag Labs/span_1'))
+Mobile.setText(findTestObject(''), 'deepak', 0)
 
-WebUI.click(findTestObject('Object Repository/cartPageScenerio/Page_Swag Labs/button_Continue Shopping'))
+Mobile.tap(findTestObject('Object Repository/mobileobjectdemo2/android.widget.Button - REGISTER'), 0)
 
-WebUI.click(findTestObject('Object Repository/cartPageScenerio/Page_Swag Labs/button_Add to cart_1'))
+Mobile.verifyElementVisible(findTestObject('Object Repository/mobileobjectdemo2/android.widget.ImageView'), 0)
 
-WebUI.click(findTestObject('Object Repository/cartPageScenerio/Page_Swag Labs/a_2'))
-
-WebUI.click(findTestObject('Object Repository/cartPageScenerio/Page_Swag Labs/button_Checkout'))
-
-WebUI.closeBrowser()
+Mobile.closeApplication()
 

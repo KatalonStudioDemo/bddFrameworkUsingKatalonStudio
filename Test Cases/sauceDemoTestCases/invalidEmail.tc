@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>CheckoutPage</name>
+   <name>invalidEmail</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>a67d4123-6198-43b9-adc1-8026f84f0924</testCaseGuid>
+   <testCaseGuid>3540edd7-8ad1-4b18-a36e-8f964bff3e55</testCaseGuid>
 </TestCaseEntity>

@@ -17,26 +17,3 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser('')
-
-WebUI.callTestCase(findTestCase('sauceDemoTestCases/loginTestCase'), [:], FailureHandling.STOP_ON_FAILURE)
-
-WebUI.callTestCase(findTestCase('sauceDemoTestCases/checkOutWithGuestUser'), [:], FailureHandling.STOP_ON_FAILURE)
-
-WebUI.setText(findTestObject('Object Repository/checkoutPage/Page_Swag Labs/input_Checkout Your Information_firstName'), 
-    'Test')
-
-WebUI.setText(findTestObject('Object Repository/checkoutPage/Page_Swag Labs/input_Checkout Your Information_lastName'), 
-    'user')
-
-WebUI.setText(findTestObject('Object Repository/checkoutPage/Page_Swag Labs/input_Checkout Your Information_postalCode'), 
-    '152012')
-
-WebUI.click(findTestObject('Object Repository/checkoutPage/Page_Swag Labs/input_Cancel_continue'))
-
-WebUI.click(findTestObject('Object Repository/checkoutPage/Page_Swag Labs/button_Finish'))
-
-WebUI.click(findTestObject('Object Repository/checkoutPage/Page_Swag Labs/button_Back Home'))
-
-WebUI.closeBrowser()
-

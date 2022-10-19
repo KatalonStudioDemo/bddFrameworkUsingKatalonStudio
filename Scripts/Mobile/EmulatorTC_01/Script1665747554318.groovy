@@ -17,13 +17,13 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-myOutput = WS.sendRequest(findTestObject('APITestObjects/GetReq'))
+Mobile.startApplication('D:\\katalon studio\\Android Apk file\\API Demos for Android_v1.9.0_apkpure.com.apk', true)
 
-WS.verifyResponseStatusCode(myOutput, 200)
+Mobile.tap(findTestObject('Object Repository/mobile/android.widget.Button - OK'), 0)
 
-WS.verifyElementPropertyValue(myOutput, 'data[0].first_name', 'Michael')
+Mobile.tap(findTestObject('Object Repository/mobile/android.widget.TextView - OK'), 0)
 
-WS.verifyElementPropertyValue(myOutput, 'data[0].last_name', 'Lawson')
+Mobile.tap(findTestObject('Object Repository/mobile/android.widget.TextView - App Invite Demo'), 0)
 
-WS.verifyElementPropertyValue(myOutput, 'data[1].last_name', 'Ferguson')
+Mobile.closeApplication()
 

@@ -17,13 +17,22 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-myOutput = WS.sendRequest(findTestObject('APITestObjects/GetReq'))
+WebUI.openBrowser('')
 
-WS.verifyResponseStatusCode(myOutput, 200)
+WebUI.navigateToUrl('https://www.saucedemo.com/')
 
-WS.verifyElementPropertyValue(myOutput, 'data[0].first_name', 'Michael')
+WebUI.setText(findTestObject('Object Repository/invalidPswd/Page_Swag Labs/input_standard_userlocked_out_userproblem_u_db77ac'), 
+    'standard_user')
 
-WS.verifyElementPropertyValue(myOutput, 'data[0].last_name', 'Lawson')
+WebUI.setEncryptedText(findTestObject('Object Repository/invalidPswd/Page_Swag Labs/input_standard_userlocked_out_userproblem_u_3423e9'), 
+    'BNtL1atTet/WZ0S/944+zg==')
 
-WS.verifyElementPropertyValue(myOutput, 'data[1].last_name', 'Ferguson')
+WebUI.sendKeys(findTestObject('Object Repository/invalidPswd/Page_Swag Labs/input_standard_userlocked_out_userproblem_u_3423e9'), 
+    Keys.chord(Keys.ENTER))
+
+WebUI.click(findTestObject('Object Repository/invalidPswd/Page_Swag Labs/input_Epic sadface Username and password do_49e5e9'))
+
+WebUI.verifyTextPresent('Epic sadface: Username and password do not match any user in this service', false)
+
+WebUI.closeBrowser()
 

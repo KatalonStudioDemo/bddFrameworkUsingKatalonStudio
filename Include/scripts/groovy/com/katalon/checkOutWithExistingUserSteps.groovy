@@ -50,6 +50,11 @@ class checkOutWithExistingUserSteps {
 		WebUI.navigateToUrl('https://www.saucedemo.com/')
 	}
 
+	@Given("Maximize the webpage")
+	 def maximizeWebPage() {
+		 WebUI.maximizeWindow()
+	 }
+	
 	@When("Enter the email and password field")
 	def enterDetails(){
 		WebUI.setText(findTestObject('Object Repository/sauceDemoPageObjects/Page_Swag Labs/input_standard_userlocked_out_userproblem_u_db77ac'),
@@ -63,10 +68,23 @@ class checkOutWithExistingUserSteps {
 	def clickLoginButton(){
 		WebUI.click(findTestObject('Object Repository/sauceDemoPageObjects/Page_Swag Labs/input_standard_userlocked_out_userproblem_u_0dff71'))
 	}
+	
+	@Then("verify the inventory html page url")
+	def verifyURL() {
+		def url = WebUI.getUrl();
+		WebUI.verifyEqual(url, 'https://www.saucedemo.com/inventory.html');
+		
+	}
 
 	@And("click on Add to cart button")
 	def clickAddToCartBtn(){
 		WebUI.click(findTestObject('Object Repository/sauceDemoPageObjects/Page_Swag Labs/button_Add to cart'))
+	}
+	
+	@Then("verify the cart page url")
+	def cartPageURL() {
+		def url = WebUI.getUrl();
+		WebUI.verifyEqual(url, 'https://www.saucedemo.com/cart.html');
 	}
 
 	@And("click on cart icon on top header of the page")
@@ -83,6 +101,13 @@ class checkOutWithExistingUserSteps {
 	@And("click on Add to cart button for the second item to be selected")
 	def addToCartBtn(){
 		WebUI.click(findTestObject('Object Repository/sauceDemoPageObjects/Page_Swag Labs/button_Add to cart_1'))
+	}
+	
+	@Then("verify the checkout page url")
+	def checkoutPageUrl() {
+		def url = WebUI.getUrl();
+		WebUI.verifyEqual(url, 'https://www.saucedemo.com/checkout-step-one.html');
+		
 	}
 
 	@And("click on checkout button")
@@ -116,5 +141,29 @@ class checkOutWithExistingUserSteps {
 	@And("Click on finish button")
 	def finishBtn(){
 		WebUI.click(findTestObject('Object Repository/sauceDemoPageObjects/Page_Swag Labs/button_Finish'))
+	}
+	
+	@When("Enter the email field")
+	def invalid_email(){
+		WebUI.setText(findTestObject('Object Repository/invalidEmail/Page_Swag Labs/input_standard_userlocked_out_userproblem_u_db77ac'),
+			'standarduser')
+	}
+	
+	@And("Enter the valid password field")
+	def valid_pswd(){
+		WebUI.setEncryptedText(findTestObject('Object Repository/sauceDemoPageObjects/Page_Swag Labs/input_standard_userlocked_out_userproblem_u_3423e9'),
+			'qcu24s4901FyWDTwXGr6XA==')
+	}
+	
+	@Then("verify invalid details message to be displayed")
+	def invalidDataMsg() {
+		def invalidMsg = WebUI.verifyTextPresent('Epic sadface: Username and password do not match any user in this service', false);
+		
+	}
+	
+	@And("Enter the invalid password field")
+	def invalid_pswd(){
+		WebUI.setEncryptedText(findTestObject('Object Repository/invalidPswd/Page_Swag Labs/input_standard_userlocked_out_userproblem_u_3423e9'), 
+    'BNtL1atTet/WZ0S/944+zg==')
 	}
 }

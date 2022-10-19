@@ -35,7 +35,8 @@ import groovy.json.JsonSlurper
 import internal.GlobalVariable as GlobalVariable
 
 RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
+ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
-ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()</verificationScript>
+assertThat(response.getStatusCode()).isEqualTo(204);</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>
